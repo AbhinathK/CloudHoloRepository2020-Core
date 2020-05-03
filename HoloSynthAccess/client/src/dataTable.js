@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const downloadBaseURL = process.env.REACT_APP_CIA_DOWNLOAD_URL;
 const apiBaseURL = process.env.REACT_APP_CIA_BASE_URL;
-const backendURL=`${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}`
+const backendURL=`${process.env.REACT_APP_SYNTH_BACKEND_HOST}:${process.env.REACT_APP_SYNTH_BACKEND_PORT}`
 const postArray=['kidney','abdomen', 'lung','brain','bone'];
 var dataHeader;
 var postSwitch=false;
