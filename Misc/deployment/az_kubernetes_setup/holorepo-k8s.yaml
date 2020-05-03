@@ -211,6 +211,10 @@ spec:
           value: "http://holorepository-pipelines-models"
         - name: MODEL_ABDOMINAL_SEGMENTATION_PORT
           value: "5000"
+        - name: MODEL_BRAIN_SEGMENTATION_HOST
+          value: "http://holorepository-brain-model"
+        - name: MODEL_BRAIN_SEGMENTATION_PORT
+          value: "5001"
         - name: HOLOSTORAGE_ACCESSOR_HOST
           value: "http://51.104.216.54"
         - name: HOLOSTORAGE_ACCESSOR_PORT
@@ -268,3 +272,145 @@ spec:
     app: holorepository-pipelines-models
   ports:
     - port: 5000
+
+  
+  ---
+
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: holorepository-pipelines-brain-model
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: holorepository-pipelines-brain-model
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: holorepository-pipelines-brain-model
+        image: holocontainers.azurecr.io/holopipelines-brain-model:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5001
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: holorepository-pipelines-brain-model
+spec:
+  selector:
+    app: holorepository-pipelines-brain-model
+  ports:
+    - port: 5001
+
+
+---
+
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: holosynthaccess-client
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: holosynthaccess-client
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: holosynthaccess-client
+        image: holocontainers.azurecr.io/holosynthaccess-client:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3005
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: holosynthaccess-client
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 3005
+  selector:
+    app: holosynthaccess-client
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: holosynthaccess-server
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 3006
+  selector:
+    app: holosynthaccess-server
+
+---
+
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: holosynthaccess-server
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: holosynthaccess-server
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: holorepository-ui-sever
+        image: holocontainers.azurecr.io/holosynthaccess-server:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3006
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m
+        env:
+        - name: PORT
+          value: "3006"
+        - name: NODE_ENV
+          value: "development"
+        - name: EHR_SERVER_BASE_URL
+          value: https://holostorage-demo.azurewebsites.net
+
+---
