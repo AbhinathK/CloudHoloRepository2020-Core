@@ -60,7 +60,7 @@ With the HoloRepository project, we intend to build the technical base for a sea
 
 ## System overview
 
-![HoloRepository system overview]<img width="947" alt="New Architecture" src="https://user-images.githubusercontent.com/24452907/81225435-233f8380-8fe1-11ea-9eca-f08c3331f649.png">
+<img width="947" alt="New Architecture" src="https://user-images.githubusercontent.com/24452907/81225435-233f8380-8fe1-11ea-9eca-f08c3331f649.png">
 
 The HoloRepository ecosystem consists of multiple sub-systems and remains open to future extensions. Currently, core components are:
 
