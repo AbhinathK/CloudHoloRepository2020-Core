@@ -161,7 +161,10 @@ HoloRepositoryUI/client:  3000
 HoloRepositoryUI/server:  3001
 HoloPipelines/core:       3100
 HoloStorageAccessor:      3200
-HoloPipelines/models:     5000, 5001, 5002, ...
+Abdominal Model:          5000
+Brain Model:              5001
+HoloSynthAccess Client:   3005
+HoloSynthAccess Server:   3006   
 ```
 
 #### Run system in docker-compose
