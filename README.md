@@ -64,11 +64,10 @@ With the HoloRepository project, we intend to build the technical base for a sea
 
 The HoloRepository ecosystem consists of multiple sub-systems and remains open to future extensions. Currently, core components are:
 
-### [HoloRepositoryUI](https://github.com/nbckr/HoloRepository-Core/tree/master/HoloRepositoryUI)<a href="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_build/latest?definitionId=1&branchName=dev"><img src="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_apis/build/status/HoloRepository-Core?branchName=dev&jobName=HoloRepositoryUI%20-%20Client" alt="Client build status" align="right" /></a><a href="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_build/latest?definitionId=1&branchName=dev"><img src="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_apis/build/status/HoloRepository-Core?branchName=dev&jobName=HoloRepositoryUI%20-%20Server" alt="Server build status" align="right" /></a>
-
+### [HoloRepositoryUI]
 A web-based application that allows practitioners to browse their patients and manage the generation of 3D models sourced from imaging studies like CT or MRI scans. The client-side application is accompanied by an API server that is responsible for communicating with the other components.
 
-### [HoloPipelines](https://github.com/nbckr/HoloRepository-Core/tree/master/HoloPipelines)<a href="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_build/latest?definitionId=1&branchName=dev"><img src="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_apis/build/status/HoloRepository-Core?branchName=dev&jobName=HoloPipelines%20-%20Core" alt="HoloPipelines core build status" align="right" /></a><a href="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_build/latest?definitionId=1&branchName=dev"><img src="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_apis/build/status/HoloRepository-Core?branchName=dev&jobName=HoloPipelines%20-%20Models" alt="HoloPipelines models build status" align="right" /></a>
+### [HoloPipelines]
 
 A cloud-based service that performs the automatic generation of 3D models from 2D image stacks. Pre-trained neural network models are deployed and accessed with this component alongside traditional techniques like Hounsfield value thresholding.
 
@@ -76,19 +75,19 @@ A cloud-based service that performs the automatic generation of 3D models from 2
 
 A cloud-based storage for medical 3D models and associated metadata. Entirely hosted on Microsoft Azure, a FHIR server stores the structured medical data and a Blob Storage server provides for the binary holographic data.
 
-### [HoloStorageAccessor](https://github.com/nbckr/HoloRepository-Core/tree/master/HoloStorageAccessor)<a href="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_build/latest?definitionId=1&branchName=dev"><img src="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_apis/build/status/HoloRepository-Core?branchName=dev&jobName=HoloStorageAccessor" alt="HoloStorageAccessor build status" align="right" /></a>
+### [HoloStorageAccessor]
 
 An enhanced facade, offering a consistent interface to the HoloStorage and translating the public REST API to internal FHIR queries. To facilitate development of 3rd party components, the interface comes with an interactive OpenAPI documentation.
 
-### [HoloStorageConnector](https://github.com/nbckr/HoloRepository-HoloLens/tree/master/HoloStorageConnector)
+### [HoloStorageConnector]
 
 A Unity library handling the runtime network connections from HoloLens applications to the HoloStorage. Distributed as a separate UnityPackage, this is meant to facilitate development of 3rd party applications that plug into the HoloRepository ecosystem.
 
-### [HoloRepository demo application](https://github.com/nbckr/HoloRepository-HoloLens/tree/master/HoloRepositoryDemoApplication)
+### [HoloRepository demo application]
 
 A simple application that demonstrates how to dynamically access 3D models stored in the HoloStorage. The scenes can be distributed alongside the Connector library and serve as examples and interactive documentation.
 
-### [Other tools](https://github.com/nbckr/HoloRepository-Core/tree/master/Misc)
+### [Other tools]
 
 Several scripts and tools were developed to help perform tasks, for instance test data generation or deployment automation.
 
@@ -118,7 +117,7 @@ which are guaranteed to succeed are:
 
 ## Code organisation
 
-Most of the components are kept here in the [HoloRepository-Core](https://github.com/nbckr/HoloRepository-Core) mono-repository. The sub-directories correspond to sub-components as described above. The only exception are the components that are developed in Unity/C#, they are separately kept in the [HoloRepository-HoloLens](https://github.com/nbckr/HoloRepository-HoloLens) repository.
+Most of the components are kept here in the [Cloud HoloRepository2020-Core](https://github.com/AbhinathK/CloudHoloRepository2020-Core) mono-repository. The sub-directories correspond to sub-components as described above. The only exception are the components that are developed in Unity/C#, they are separately kept in the [HoloRepository-HoloLens](https://github.com/nbckr/HoloRepository-HoloLens) repository.
 
 ## Development
 
