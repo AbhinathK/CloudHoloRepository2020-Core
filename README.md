@@ -1,7 +1,7 @@
 <p align="center">
   <img width="300" alt="HoloRepository logo" src="https://user-images.githubusercontent.com/11090412/62009421-f491a400-b156-11e9-98ca-408dc2fab7e8.png">
   <p align="center">
-    A system for transforming medical imaging studies such as CT or MRI scans into 3-dimensional holograms, storing data on a cloud-based platform and making it available for other systems.
+    A system for transforming medical imaging studies such as CT or MRI scans into 3-dimensional holograms, storing data on a cloud-based platform and making it available for other systems. This is the 2020 edition of HoloRepository, which  is an Azure Cloud solution that works with the newly released HoloLens 2 and facilitates cloud storage of 3D models.
   </p>
   
   <p align="center">
