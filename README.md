@@ -91,6 +91,11 @@ A simple application that demonstrates how to dynamically access 3D models store
 
 A new component of the HoloRepository,  which connects the system to the Cancer Imaging Archive (CIA), one of the world’s largest open-access databases of medical images for cancer research.  Users are able to use the web-application to query for imaging studies of over 70 different anatomical structures. Studies can be downloaded directly to your local machine or sent to HoloRepository-Core for model generation.
 
+### HoloRegistration
+
+The HoloRegistation 2020 application allows segmented organ models to be overlayed over the human body through an augmented reality experience. Organ models loaded can automatically locate themselves at the correct position and size, moving along with the user.  It’s design also allows for custom organ configurations to be added at anytime without any changes to code and it supports any type of camera, including webcams. The application source code can be viewed at.
+
+
 ### Other tools
 
 Several scripts and tools were developed to help perform tasks, for instance test data generation or deployment automation.
