@@ -64,7 +64,7 @@ With the HoloRepository project, we intend to build the technical base for a sea
 
 The HoloRepository ecosystem consists of multiple sub-systems and remains open to future extensions. Currently, core components are:
 
-### [HoloRepositoryUI]
+### HoloRepositoryUI
 A web-based application that allows practitioners to browse their patients and manage the generation of 3D models sourced from imaging studies like CT or MRI scans. The client-side application is accompanied by an API server that is responsible for communicating with the other components.
 
 ### HoloPipelines
@@ -86,6 +86,10 @@ A Unity library handling the runtime network connections from HoloLens applicati
 ### HoloRepository demo application
 
 A simple application that demonstrates how to dynamically access 3D models stored in the HoloStorage. The scenes can be distributed alongside the Connector library and serve as examples and interactive documentation.
+
+### HoloSynthAccess
+
+A new component of the HoloRepository,  which connects the system to the Cancer Imaging Archive (CIA), one of the world’s largest open-access databases of medical images for cancer research.  Users are able to use the web-application to query for imaging studies of over 70 different anatomical structures. Studies can be downloaded directly to your local machine or sent to HoloRepository-Core for model generation.
 
 ### Other tools
 
