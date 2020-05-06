@@ -129,7 +129,7 @@ Most of the components are kept here in the [Cloud HoloRepository2020-Core](http
 
 To get started, you should clone both relevant git repositories:
 ```shell
-$ git clone git@github.com:nbckr/HoloRepository-Core.git
+$ git clone https://github.com/AbhinathK/CloudHoloRepository2020-Core
 $ git clone git@github.com:nbckr/HoloRepository-HoloLens.git
 ```
 
