@@ -9,18 +9,6 @@
   </p>
 
   <p align="center">
-    <a href="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_build/latest?definitionId=1&branchName=dev">
-      <img src="https://img.shields.io/azure-devops/build/MSGOSHHOLO/84bcb432-f279-452c-a53c-37df0f28baf0/1" alt="Build status"/>
-    </a>
-    <a href="https://www.codefactor.io/repository/github/nbckr/holorepository-core">
-      <img alt="CodeFactor Grade" src="https://img.shields.io/codefactor/grade/github/nbckr/HoloRepository-Core" />
-    </a>
-    <a href="https://github.com/nbckr/HoloRepository-Core/issues">
-      <img alt="GitHub issues" src="https://img.shields.io/github/issues/nbckr/HoloRepository-Core" />
-    </a>
-    <a href="https://github.com/nbckr/HoloRepository-Core/pulls">
-      <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/nbckr/HoloRepository-Core" />
-    </a>
     <a href="https://github.com/nbckr/HoloRepository-Core/blob/master/LICENSE">
       <img alt="GitHub" src="https://img.shields.io/github/license/nbckr/HoloRepository-Core" />
     </a>
