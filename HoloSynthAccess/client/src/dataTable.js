@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const downloadBaseURL = process.env.REACT_APP_CIA_DOWNLOAD_URL;
 const apiBaseURL = process.env.REACT_APP_CIA_BASE_URL;
-const backendURL=`${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}`
+const backendURL=`${process.env.REACT_APP_SYNTH_BACKEND_HOST}:${process.env.REACT_APP_SYNTH_BACKEND_PORT}`
 const postArray=['kidney','abdomen', 'lung','brain','bone'];
 var dataHeader;
 var postSwitch=false;
@@ -50,17 +50,17 @@ class DataTable extends Component {
       .post(`${backendURL}/send`, data)
       .then((response)=> {
         if(response.status==200){
-          console.log(response.data)
-          console.log("Sent to HoloRepository!")
-          alert("Sent to HoloRepository")
+          console.log(response.data);
+          console.log("Sent to HoloRepository!");
+          alert("Sent to HoloRepository");
         }
         else{
-          console.log("Error with transmission to HoloRepository!")
-          alert("Error with transmission to HoloRepository!")
+          console.log("Error with transmission to HoloRepository!");
+          alert("Error with transmission to HoloRepository. Please check console output for logs");
         }
       })
       .catch(err => {
-        alert("Error with transmission to HoloRepository!")
+        alert("Error with transmission to HoloRepository. Please check console output for logs");
         console.error(err);
       })
       );

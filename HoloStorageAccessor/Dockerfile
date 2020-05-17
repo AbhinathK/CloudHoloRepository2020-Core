@@ -18,3 +18,4 @@ COPY --from=build /workspace/holo-storage-accessor ./
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 EXPOSE 3200
 ENTRYPOINT ["./holo-storage-accessor"]
+

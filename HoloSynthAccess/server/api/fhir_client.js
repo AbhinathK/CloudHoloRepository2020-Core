@@ -16,7 +16,7 @@ let insertFHIR = async function(blob_name, callback){
 
     try{
         const client = fhirClient(req, res).client({
-            serverUrl: process.env.ACCESSOR_FHIR_UR
+            serverUrl: process.env.EHR_FHIR_UR
         });
        await client.request({
             url: "ImagingStudy",

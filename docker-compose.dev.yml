@@ -39,10 +39,12 @@ services:
     build: ./HoloPipelines/models/dense_vnet_abdominal_ct
     ports:
       - "5000:5000"
+      
   holopipelines-models__brain_segmentation:
     build: ./HoloPipelines/models/brain_segmentation
     ports:
-      - "5002:5002"
+      - "5001:5001"
+
   holosynthaccess-client:
     build:
       context: ./HoloSynthAccess 
