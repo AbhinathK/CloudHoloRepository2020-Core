@@ -127,7 +127,7 @@ which are guaranteed to succeed are:
 
 ## Code organisation
 
-Most of the components are kept here in the [Cloud HoloRepository2020-Core](https://github.com/AbhinathK/CloudHoloRepository2020-Core) mono-repository. The sub-directories correspond to sub-components as described above. The only exception are the components that are developed in Unity/C#, they are separately kept in the [HoloRepository-HoloLens](https://github.com/nbckr/HoloRepository-HoloLens) repository.
+The latest code and alternative branches can be accessed in the in the [Cloud HoloRepository2020-Core](https://github.com/AbhinathK/CloudHoloRepository2020-Core) mono-repository. The sub-directories correspond to sub-components as described above. The only exception are the components that are developed in Unity/C#, they are separately kept in the [HoloRepository-HoloLens](https://github.com/nbckr/HoloRepository-HoloLens) repository.
 
 ## Development
 
