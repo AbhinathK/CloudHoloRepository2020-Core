@@ -202,6 +202,11 @@ Lastly, it is also possible to start the whole system except for one component, 
 $ docker-compose --file docker-compose.dev.yml up --scale holostorage-accessor=0
 ```
 
+#### Work left to be done
+1. Testing if brain pipeline can be hosted on Azure Kubernetes Service with current configuration. It may require upgrading the virtual machine to a GPU-enabled instance in the Kubernetes node cluster. Changes have already been made to the deployment configuration file under Misc/deployment/az_kubernetes_setup
+2. Integrating the new kidney pipeline, which will require modifying the aforementioned deployment file by mapping the appropriate ports and linking to Docker image in Azure Container Registry. Instructions are included in Misc/deployment/az_kubernetes_setup
+3. Redeployment of new architecture on Azure. Follow instructions included in Misc/deployment/
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. For feature requests, please also open an issue.
