@@ -2,8 +2,8 @@
   <img width="300" alt="HoloRepository logo" src="https://user-images.githubusercontent.com/11090412/62009421-f491a400-b156-11e9-98ca-408dc2fab7e8.png">
   <p align="center">
     A system for transforming medical imaging studies such as CT or MRI scans into 3-dimensional holograms, storing data on a cloud-based platform and making it available for other systems. This is the 2020 edition of HoloRepository, which  is an Azure Cloud solution that works with the newly released HoloLens 2 and facilitates cloud storage of 3D models.
+    Note: This edition is still a work in progress.
   </p>
-  
   <p align="center">
     Find out more on the <a href="https://fanbomeng97.github.io/HoloRepository-Website/#/">project website</a>.
   </p>
@@ -33,6 +33,7 @@
   - [Get started](#get-started)
   - [Set up the environment](#set-up-the-environment)
   - [System integration](#system-integration)
+- [Work left to be done](#work-left-to-be-done)
 - [Contributing](#contributing)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
@@ -202,7 +203,7 @@ Lastly, it is also possible to start the whole system except for one component, 
 $ docker-compose --file docker-compose.dev.yml up --scale holostorage-accessor=0
 ```
 
-#### Work left to be done
+## Work left to be done
 1. Testing if brain pipeline can be hosted on Azure Kubernetes Service with current configuration. It may require upgrading the virtual machine to a GPU-enabled instance in the Kubernetes node cluster. Changes have already been made to the deployment configuration file under Misc/deployment/az_kubernetes_setup
 2. Integrating the new kidney pipeline, which will require modifying the aforementioned deployment file by mapping the appropriate ports and linking to Docker image in Azure Container Registry. Instructions are included in Misc/deployment/az_kubernetes_setup
 3. Redeployment of new architecture on Azure. Follow instructions included in Misc/deployment/
