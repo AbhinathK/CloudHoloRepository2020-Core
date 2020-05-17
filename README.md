@@ -1,7 +1,7 @@
 <p align="center">
   <img width="300" alt="HoloRepository logo" src="https://user-images.githubusercontent.com/11090412/62009421-f491a400-b156-11e9-98ca-408dc2fab7e8.png">
   <p align="center">
-    A system for transforming medical imaging studies such as CT or MRI scans into 3-dimensional holograms, storing data on a cloud-based platform and making it available for other systems.
+    A system for transforming medical imaging studies such as CT or MRI scans into 3-dimensional holograms, storing data on a cloud-based platform and making it available for other systems. This is the 2020 edition of HoloRepository, which  is an Azure Cloud solution that works with the newly released HoloLens 2 and facilitates cloud storage of 3D models.
   </p>
   
   <p align="center">
@@ -9,18 +9,6 @@
   </p>
 
   <p align="center">
-    <a href="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_build/latest?definitionId=1&branchName=dev">
-      <img src="https://img.shields.io/azure-devops/build/MSGOSHHOLO/84bcb432-f279-452c-a53c-37df0f28baf0/1" alt="Build status"/>
-    </a>
-    <a href="https://www.codefactor.io/repository/github/nbckr/holorepository-core">
-      <img alt="CodeFactor Grade" src="https://img.shields.io/codefactor/grade/github/nbckr/HoloRepository-Core" />
-    </a>
-    <a href="https://github.com/nbckr/HoloRepository-Core/issues">
-      <img alt="GitHub issues" src="https://img.shields.io/github/issues/nbckr/HoloRepository-Core" />
-    </a>
-    <a href="https://github.com/nbckr/HoloRepository-Core/pulls">
-      <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/nbckr/HoloRepository-Core" />
-    </a>
     <a href="https://github.com/nbckr/HoloRepository-Core/blob/master/LICENSE">
       <img alt="GitHub" src="https://img.shields.io/github/license/nbckr/HoloRepository-Core" />
     </a>
@@ -72,15 +60,14 @@ With the HoloRepository project, we intend to build the technical base for a sea
 
 ## System overview
 
-![HoloRepository system overview](https://user-images.githubusercontent.com/11090412/63985867-7748ae80-cac9-11e9-82e1-74de31f486d7.png)
+<img width="947" alt="New Architecture" src="https://user-images.githubusercontent.com/24452907/81225435-233f8380-8fe1-11ea-9eca-f08c3331f649.png">
 
 The HoloRepository ecosystem consists of multiple sub-systems and remains open to future extensions. Currently, core components are:
 
-### [HoloRepositoryUI](https://github.com/nbckr/HoloRepository-Core/tree/master/HoloRepositoryUI)<a href="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_build/latest?definitionId=1&branchName=dev"><img src="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_apis/build/status/HoloRepository-Core?branchName=dev&jobName=HoloRepositoryUI%20-%20Client" alt="Client build status" align="right" /></a><a href="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_build/latest?definitionId=1&branchName=dev"><img src="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_apis/build/status/HoloRepository-Core?branchName=dev&jobName=HoloRepositoryUI%20-%20Server" alt="Server build status" align="right" /></a>
-
+### HoloRepositoryUI
 A web-based application that allows practitioners to browse their patients and manage the generation of 3D models sourced from imaging studies like CT or MRI scans. The client-side application is accompanied by an API server that is responsible for communicating with the other components.
 
-### [HoloPipelines](https://github.com/nbckr/HoloRepository-Core/tree/master/HoloPipelines)<a href="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_build/latest?definitionId=1&branchName=dev"><img src="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_apis/build/status/HoloRepository-Core?branchName=dev&jobName=HoloPipelines%20-%20Core" alt="HoloPipelines core build status" align="right" /></a><a href="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_build/latest?definitionId=1&branchName=dev"><img src="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_apis/build/status/HoloRepository-Core?branchName=dev&jobName=HoloPipelines%20-%20Models" alt="HoloPipelines models build status" align="right" /></a>
+### HoloPipelines
 
 A cloud-based service that performs the automatic generation of 3D models from 2D image stacks. Pre-trained neural network models are deployed and accessed with this component alongside traditional techniques like Hounsfield value thresholding.
 
@@ -88,19 +75,28 @@ A cloud-based service that performs the automatic generation of 3D models from 2
 
 A cloud-based storage for medical 3D models and associated metadata. Entirely hosted on Microsoft Azure, a FHIR server stores the structured medical data and a Blob Storage server provides for the binary holographic data.
 
-### [HoloStorageAccessor](https://github.com/nbckr/HoloRepository-Core/tree/master/HoloStorageAccessor)<a href="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_build/latest?definitionId=1&branchName=dev"><img src="https://dev.azure.com/MSGOSHHOLO/HoloRepository/_apis/build/status/HoloRepository-Core?branchName=dev&jobName=HoloStorageAccessor" alt="HoloStorageAccessor build status" align="right" /></a>
+### HoloStorageAccessor
 
 An enhanced facade, offering a consistent interface to the HoloStorage and translating the public REST API to internal FHIR queries. To facilitate development of 3rd party components, the interface comes with an interactive OpenAPI documentation.
 
-### [HoloStorageConnector](https://github.com/nbckr/HoloRepository-HoloLens/tree/master/HoloStorageConnector)
+### HoloStorageConnector
 
 A Unity library handling the runtime network connections from HoloLens applications to the HoloStorage. Distributed as a separate UnityPackage, this is meant to facilitate development of 3rd party applications that plug into the HoloRepository ecosystem.
 
-### [HoloRepository demo application](https://github.com/nbckr/HoloRepository-HoloLens/tree/master/HoloRepositoryDemoApplication)
+### HoloRepository demo application
 
 A simple application that demonstrates how to dynamically access 3D models stored in the HoloStorage. The scenes can be distributed alongside the Connector library and serve as examples and interactive documentation.
 
-### [Other tools](https://github.com/nbckr/HoloRepository-Core/tree/master/Misc)
+### HoloSynthAccess
+
+A new component of the HoloRepository,  which connects the system to the Cancer Imaging Archive (CIA), one of the world’s largest open-access databases of medical images for cancer research.  Users are able to use the web-application to query for imaging studies of over 70 different anatomical structures. Studies can be downloaded directly to your local machine or sent to HoloRepository-Core for model generation.
+
+### HoloRegistration
+
+The HoloRegistation 2020 application allows segmented organ models to be overlayed over the human body through an augmented reality experience. Organ models loaded can automatically locate themselves at the correct position and size, moving along with the user.  It’s design also allows for custom organ configurations to be added at anytime without any changes to code and it supports any type of camera, including webcams. The application source code can be viewed at.
+
+
+### Other tools
 
 Several scripts and tools were developed to help perform tasks, for instance test data generation or deployment automation.
 
@@ -130,7 +126,7 @@ which are guaranteed to succeed are:
 
 ## Code organisation
 
-Most of the components are kept here in the [HoloRepository-Core](https://github.com/nbckr/HoloRepository-Core) mono-repository. The sub-directories correspond to sub-components as described above. The only exception are the components that are developed in Unity/C#, they are separately kept in the [HoloRepository-HoloLens](https://github.com/nbckr/HoloRepository-HoloLens) repository.
+Most of the components are kept here in the [Cloud HoloRepository2020-Core](https://github.com/AbhinathK/CloudHoloRepository2020-Core) mono-repository. The sub-directories correspond to sub-components as described above. The only exception are the components that are developed in Unity/C#, they are separately kept in the [HoloRepository-HoloLens](https://github.com/nbckr/HoloRepository-HoloLens) repository.
 
 ## Development
 
@@ -138,7 +134,7 @@ Most of the components are kept here in the [HoloRepository-Core](https://github
 
 To get started, you should clone both relevant git repositories:
 ```shell
-$ git clone git@github.com:nbckr/HoloRepository-Core.git
+$ git clone https://github.com/AbhinathK/CloudHoloRepository2020-Core
 $ git clone git@github.com:nbckr/HoloRepository-HoloLens.git
 ```
 
@@ -173,7 +169,10 @@ HoloRepositoryUI/client:  3000
 HoloRepositoryUI/server:  3001
 HoloPipelines/core:       3100
 HoloStorageAccessor:      3200
-HoloPipelines/models:     5000, 5001, 5002, ...
+Abdominal Model:          5000
+Brain Model:              5001
+HoloSynthAccess Client:   3005
+HoloSynthAccess Server:   3006   
 ```
 
 #### Run system in docker-compose
